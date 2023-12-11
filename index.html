@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <script type="module" src="./script/changeView.js"></script>
+    <script type="module" src="./script/searchPokemon.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header><img id="startView" src="./image/pokemonheader.png" alt=""></header>
     <main>
-        <section class="changeView"></section>
-        <section class="searchPokemon"></section>
-        <section class="pokemonTeam"></section>
+        <section class="changeView">
+            <button class="searchButton">Sök Pokemon</button>
+            <button class="myTeamButton">Mitt lag</button>
+        </section>
     </main>
+    <section class="pokemon-container"></section>
 </body>
 </html>
