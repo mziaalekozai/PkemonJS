@@ -1,14 +1,16 @@
-// import { searchPokemons } from './scripts/searchPokemons.js';
+import { fetchPokemon } from './displayPokemon.js';
+
 const pokemonElement = document.querySelector('.pokemon-container');
 const searchBtn = document.querySelector('.searchButton');
 const myTeamBtn = document.querySelector('.myTeamButton');
 const startView = document.querySelector('#startView');
+const displayPokemonView = document.querySelector('#displayPokemon');
 
 const mainView = document.createElement('div');
 const myTeamView = document.createElement('div');
 const searchView = document.createElement('div');
 const searchInput = document.createElement('input');
-searchInput.type = 'text', searchInput.placeholder = 'Sök pokemon'; 
+searchInput.type = 'text', searchInput.placeholder = 'Sök pokemon';
 
 searchInput.classList.add('searchInput');
 mainView.classList.add('mainView');
@@ -31,28 +33,32 @@ document.addEventListener("click", function () {
 
 searchView.style.display = 'none';
 myTeamView.style.display = 'none';
+displayPokemonView.style.display = 'none';
 
 // Här kommer man till sök fillted när man trycker på kappen sök pokemon.
 searchBtn.addEventListener('click', () => {
     mainView.classList.remove('mainView');
     myTeamView.style.display = 'none';
-    searchView.style.display = 'flex';
-    
+    searchView.style.display = 'grid';
+    fetchPokemon();
+    displayPokemonView.style.display = 'flex';
 });
+
 // Här kommer man till mitt lag när man trycker på kappen mitt lag.
 myTeamBtn.addEventListener('click', () => {
     mainView.classList.remove('mainView');
     myTeamView.style.display = 'flex';
     searchView.style.display = 'none';
-    
+    displayPokemonView.style.display = 'none';
+
+
 });
 // Här kommer man till lodding sida när man trycker på pokemon i header.
 startView.addEventListener('click', () => {
     mainView.classList.add('mainView');
     searchView.style.display = 'none';
     myTeamView.style.display = 'none';
-    
+    displayPokemonView.style.display = 'none';
 });
 
-
-export  { searchView, myTeamView };
+export { searchView, myTeamView };
