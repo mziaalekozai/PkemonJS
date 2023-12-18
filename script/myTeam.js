@@ -33,7 +33,7 @@ let reservList = [];
 const addToTeamList = (pokemon) => {
   console.log('Adding to team:', pokemon);
   // Kontrollera om Pokemon redan finns i antingen teamList eller reservList
-  if (!teamList.includes(pokemon) && !reservList.includes(pokemon)) {
+//   if (!teamList.includes(pokemon) && !reservList.includes(pokemon)) {
       if (teamList.length < 3) {
           teamList.push(pokemon);
           countMyTeam++;
@@ -56,9 +56,10 @@ const addToTeamList = (pokemon) => {
       }
       displayMyTeam(teamList);
       displayReserv(reservList);
-  } else {
-      console.log('Pokemon already in team or reserv');
-  }
+//   }
+//    else {
+//       console.log('Pokemon already in team or reserv');
+//   }
 };
 
 

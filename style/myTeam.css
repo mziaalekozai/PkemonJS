@@ -5,17 +5,23 @@
     text-align: center;
     padding-top: 1;
     margin: 2em 0;
-    box-shadow: inset 0px 0px 5px #EF5350;
+    /* box-shadow: inset 0px 0px 5px #EF5350; */
 }
-.teamInfo{
+.teamInfo, h1{
     text-align: center;
     color: #fff;
 	font-weight: bold;
 }
-.myTeam-container{
+/* .myTeam-container{
     text-align: center;
     margin: 1em;
     color: #fff;
 	font-weight: bold;
-
+    
+} */
+.myTeam-container h1{
+    font-size: 1.7em;
+    background-color: #A869C5;
+    box-shadow: inset 0px 0px 15px #EF5350;
+    padding: 0.3em;
 }

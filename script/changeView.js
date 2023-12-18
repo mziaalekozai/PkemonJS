@@ -12,7 +12,8 @@ const myTeamContainer = document.querySelector('.myTeam-container');
 
 const mainView = document.createElement('div');
 const searchView = document.createElement('div');
-mainView.classList.add('mainView', 'searchPokemon', 'pokemonTeam');
+mainView.classList.add('mainView');
+searchView.classList.add('searchPokemon');
 
 pokemonElement.appendChild(mainView);
 pokemonElement.appendChild(searchView);
@@ -32,9 +33,10 @@ searchBtn.addEventListener('click', async () => {
     initSearch();
     teamInfo.classList.remove("hide");
     myTeamContainer.classList.add("hide");
-    mainView.classList.remove('mainView');
+    mainView.classList.add('hide');
+    pokemonElement.style.display = 'grid';
     // myTeamContainer.style.display = 'none';
-    // searchView.style.display = 'grid';
+    searchView.style.display = 'grid';
     searchInput.style.display = 'grid';
     try {
         // Hämta sparad data från LocalStorage
@@ -56,7 +58,7 @@ searchBtn.addEventListener('click', async () => {
 });
 
 myTeamBtn.addEventListener('click', () => {
-    mainView.classList.remove('mainView');
+    mainView.classList.add('hide');
     myTeamContainer.style.display = 'grid';
     pokemonElement.style.display = 'none';
     searchView.style.display = 'none';
@@ -68,11 +70,16 @@ myTeamBtn.addEventListener('click', () => {
 });
 
 startView.addEventListener('click', () => {
-    mainView.classList.add('mainView');
-    searchView.style.display = 'none';
+    // mainView.classList.add('mainView');
+    // pokemonElement.style.display = 'none';
+    pokemonElement.style.display = 'flex';
+
+    mainView.classList.remove('hide');
     myTeamContainer.style.display = 'none';
     displayPokemonView.style.display = 'none';
     searchInput.style.display = 'none';
+    teamInfo.classList.add("hide");
+
 });
 
 export { searchView,  pokemonElement };
