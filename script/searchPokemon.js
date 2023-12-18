@@ -27,5 +27,11 @@ const initSearch = () => {
     }
   });
 };
-
+const addToTeamButtons = document.querySelectorAll('.addToTeamButton');
+addToTeamButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        activePokemon = pokemon[index];
+        console.log('Active Pokemon set:', activePokemon);
+    });
+});
 export { initSearch, searchInput };

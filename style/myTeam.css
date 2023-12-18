@@ -1,0 +1,21 @@
+.myTeam, .myReserv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1;
+    margin: 2em 0;
+    box-shadow: inset 0px 0px 5px #EF5350;
+}
+.teamInfo{
+    text-align: center;
+    color: #fff;
+	font-weight: bold;
+}
+.myTeam-container{
+    text-align: center;
+    margin: 1em;
+    color: #fff;
+	font-weight: bold;
+
+}

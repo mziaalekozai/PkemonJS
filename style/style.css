@@ -73,3 +73,11 @@ button {
 button:hover {
 	background-color: #EF9A73;
 }
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
