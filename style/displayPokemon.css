@@ -6,7 +6,8 @@
 }
 
 .card {
-    background-image: url('../svg/card-back1.svg');
+    background-image: url('INÄMNINGSUPPGIFTJS/svg/card-back1.svg');
+    /* background-image: url('../svg/card-back1.svg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

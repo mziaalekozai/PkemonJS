@@ -66,6 +66,7 @@ myTeamBtn.addEventListener('click', () => {
     displayPokemonView.style.display = 'none';
     searchInput.style.display = 'none';
     myTeamContainer.classList.remove("hide");
+    teamInfo.classList.remove("hide");
 });
 
 startView.addEventListener('click', () => {
