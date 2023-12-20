@@ -10,7 +10,7 @@ const fetchPokemon = async () => {
         const cachedPokemon = JSON.parse(cachedPokemonData);
         displayPokemon(cachedPokemon);
     } else {
-        for (let i = 1; i <= 1500; i++) {
+        for (let i = 1; i <= 1000; i++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             pokemonList.push(fetch(url).then((res) => res.json()));
         }
