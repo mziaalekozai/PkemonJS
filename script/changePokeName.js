@@ -33,6 +33,7 @@ const changePokemonName = (pokemon, callback) => {
         callback(pokemon); // Anropa callback-funktionen för att uppdatera gränssnittet
         console.log('Saved Pokemon Name ', newNickname);
     }else {
+        nickNameElement.classList.remove("hide");
     errorElement.classList.remove('hide'); 
     }
 });
