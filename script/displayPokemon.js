@@ -43,7 +43,7 @@ const displayMyTeam = (pokemon) => {
                         <img class="card-image" src="${pokemon.image}"/>
                         <h2 class="card-title"> ${pokemon.name}</h2>
                         <p class="abilities">Abilitys: ${abilitiesInfo}</p>
-                        <button class="removFromTeamBtn">Kicka</button>
+                        <button class="removFromTeamBtn">Click</button>
                     </li>
                 ` : ''}
             `;
@@ -73,7 +73,7 @@ const displayReserv = (pokemon) => {
                     <img class="card-image" src="${pokemon.image}"/>
                     <h2 class="card-title"> ${pokemon.name}</h2>
                     <p class="abilities">Abilitys ${abilitiesInfo}</p>
-                    <button class="removFromReservBtn">Kicka</button>
+                    <button class="removFromReservBtn">Click</button>
                 </li>
             ` : ''}
         `;

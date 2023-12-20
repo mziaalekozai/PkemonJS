@@ -4,11 +4,11 @@ const nickNameElement = document.querySelector('.nickName');
 const changePokemonName = (pokemon, callback) => {
     console.log('Change Pokemon Name function called');
     const createHtmlElements = `
-        <label class="nikeNameLabel">Välj namnet</label>
-        <p class = "error">Namnet tack...</p>
+        <label class="nikeNameLabel">Choose the name</label>
+        <p class = "error">The name please...</p>
         <input type="text" class="nicknameInput" value="${pokemon.name}">
-        <button class="saveBtn">Spara</button>
-        <button class="closeBtn">Stäng</button>
+        <button class="saveBtn">Save</button>
+        <button class="closeBtn">Close</button>
     `;
     
     nickNameElement.innerHTML = createHtmlElements;

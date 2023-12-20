@@ -8,7 +8,7 @@ const reserveCount = document.createElement('p')
 const teamTotalCount = document.createElement('p')
 teamCount.innerText = 'Team: 0';
 reserveCount.innerText = 'Reserv: 0';
-teamTotalCount.innerText = 'Du behöver 3 i teamet';
+teamTotalCount.innerText = 'You need 3 in the team';
 
 teamCount.classList.add('teamCountInfo');
 reserveCount.classList.add('teamCountInfo');
@@ -35,10 +35,10 @@ const addToTeamList = (pokemon) => {
           countMyTeam++;
           countMinTeam--;
           teamCount.innerText = 'Team ' + countMyTeam;
-          teamTotalCount.innerText = 'Du behöver ' + countMinTeam + ' i teamet';
+          teamTotalCount.innerText = 'You need ' + countMinTeam + ' in the team';
 
           if (teamList.length === 3) {
-          teamTotalCount.innerText = 'Teamet är komplett ' + countMyTeam;
+          teamTotalCount.innerText = 'The team is complete ';
         //   teamTotalCount.classList.add("hide");
           }
       } else {

@@ -47,7 +47,6 @@ searchBtn.addEventListener('click', async () => {
             // Använd sparad data om tillgänglig
             const cachedPokemon = JSON.parse(cachedPokemonData);
             displayPokemon(cachedPokemon);
-            // checkPokemon(cachedPokemon); // Du kan ta bort detta om det inte används här
         } else {
             // Gör API-anrop om det inte finns sparad data
             fetchPokemon();
@@ -66,22 +65,16 @@ myTeamBtn.addEventListener('click', () => {
     searchView.style.display = 'none';
     displayPokemonView.style.display = 'none';
     searchInput.style.display = 'none';
-    // myTeamDex.style.display = 'grid';
     myTeamContainer.classList.remove("hide");
-    // displayMyTeam(teamList);
 });
 
 startView.addEventListener('click', () => {
-    // mainView.classList.add('mainView');
-    // pokemonElement.style.display = 'none';
     pokemonElement.style.display = 'flex';
-
     mainView.classList.remove('hide');
     myTeamContainer.style.display = 'none';
     displayPokemonView.style.display = 'none';
     searchInput.style.display = 'none';
     teamInfo.classList.add("hide");
-
 });
 
 export { searchView,  pokemonElement };
