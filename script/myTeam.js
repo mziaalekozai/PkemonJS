@@ -2,10 +2,6 @@
 import { displayMyTeam, displayReserv } from './displayPokemon.js';
 
 const teamInfo = document.querySelector('.teamInfo');
-// const myTeamBtnContainer = document.querySelector('#displayPokemon'); // Ändra till rätt förälder
-// const myTeamBtn = document.querySelector('.addToTeamButton');
-// const teamElement = document.querySelector('.myTeam');
-// const reservElement = document.querySelector('.myReserv');
 
 const teamCount = document.createElement('p')
 const reserveCount = document.createElement('p')
@@ -42,17 +38,18 @@ const addToTeamList = (pokemon) => {
           teamTotalCount.innerText = 'Du behöver ' + countMinTeam + ' i teamet';
 
           if (teamList.length === 3) {
-              teamTotalCount.classList.add("hide");
+          teamTotalCount.innerText = 'Teamet är komplett ' + countMyTeam;
+        //   teamTotalCount.classList.add("hide");
           }
       } else {
-          if (teamList.length === 3) {
-              teamTotalCount.classList.add("hide");
-          }
+        //   if (teamList.length === 3) {
+        //       teamTotalCount.classList.add("hide");
+        //   }
           reservList.push(pokemon);
           console.log('Adding to reserv', pokemon);
           countMyReserv++;
           reserveCount.innerText = 'Reserv ' + countMyReserv;
-          reserveCount.classList.add("show");
+        //   reserveCount.classList.add("show");
       }
       displayMyTeam(teamList);
       displayReserv(reservList);
@@ -63,6 +60,6 @@ const addToTeamList = (pokemon) => {
 };
 
 
-export { teamList, addToTeamList, teamInfo };
+export {countMinTeam, teamList, reservList, addToTeamList, teamInfo, countMyTeam, countMyReserv };
 
 

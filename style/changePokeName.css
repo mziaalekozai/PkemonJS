@@ -1,0 +1,28 @@
+.nickName{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    text-align: center;
+    padding: 1em;
+    /* margin: 2em 0; */
+    box-shadow: inset 0px 0px 15px #EF5350;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}   
+
+.nickName .saveBtn, .closeBtn {
+    font-weight: bold;
+    padding: 0.5em;
+    /* margin: 0.5em; */
+    font-size: 0.8em;
+}
+.error{
+    color: red;
+}
+.hide{
+    display: none;
+}

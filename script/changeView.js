@@ -2,6 +2,7 @@ import { displayPokemon, displayMyTeam, myTeamDex } from './displayPokemon.js';
 import { fetchPokemon, pokedex } from './pokemon-api.js';
 import {teamInfo} from './myTeam.js';
 import { initSearch, searchInput } from './searchPokemon.js';
+import { nickNameElement} from './changePokeName.js';
 
 const pokemonElement = document.querySelector('.pokemon-container');
 const searchBtn = document.querySelector('.searchButton');
@@ -26,6 +27,7 @@ pokemonElement.appendChild(searchView);
 
 
 searchInput.classList.add("hide");
+nickNameElement.classList.add("hide");
 myTeamContainer.classList.add("hide");
 teamInfo.classList.add("hide");
 

@@ -13,13 +13,11 @@
     list-style: none;
     margin: 10px;
     color: #fff;
-	font-weight: bold;
+	/* font-weight: bold; */
     text-align: center;
-    padding: 0 1em 1em;
+    padding:0 0.5em 0.5em;
     border-radius: 1em;
     box-shadow: inset 0px 0px 5px #EF5350;
-    /* display: flex;
-    flex-direction: column; */
 }
 .card .addToTeamButton{
     padding: 0.7em;
@@ -32,8 +30,8 @@
 
 .card-title {
     text-transform: capitalize;
-    padding-bottom: 15px;
-    font-size: 22px;
+    padding-bottom: 10px;
+    font-size: 20px;
     font-weight: normal;
 }
 .card-subtitle {
@@ -43,10 +41,21 @@
 }
 
 .card-image {
-    height: 180px;
-    /* margin-top: 11em; */
+    height: 160px;
+    /* padding: 2em 0 0; */
 }
-
+.card p{
+    font-size: 0.8em;
+    margin: 0.2em;
+}
+.card button{
+    /* font-weight: bold; */
+    padding: 0.5em 2em;
+    /* width: 10%; */
+    text-align: center;
+    /* margin: 0.5em; */
+    font-size: 0.8em;
+}
 @keyframes bounce {
     20% {
         transform: translateY(-6px);
