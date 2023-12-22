@@ -25,7 +25,6 @@ pokemonElement.appendChild(searchView);
 //     searchInput.focus();
 // });
 
-
 searchInput.classList.add("hide");
 nickNameElement.classList.add("hide");
 myTeamContainer.classList.add("hide");
@@ -33,7 +32,7 @@ teamInfo.classList.add("hide");
 
 searchBtn.addEventListener('click', async () => {
     initSearch();
-    searchInput.innerText = ""
+    searchInput.value = "";
     teamInfo.classList.remove("hide");
     myTeamContainer.classList.add("hide");
     mainView.classList.add('hide');
@@ -65,7 +64,7 @@ myTeamBtn.addEventListener('click', () => {
     displayPokemonView.style.display = 'none';
     searchInput.style.display = 'none';
     myTeamContainer.classList.remove("hide");
-    teamInfo.classList.add("hide");
+    teamInfo.classList.remove("hide");
 });
 
 startView.addEventListener('click', () => {

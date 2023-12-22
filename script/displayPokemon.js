@@ -26,9 +26,9 @@ const displayPokemon = (pokemon) => {
         button.addEventListener('click', () => {
             const selectedPokemon = pokemon[index];
             changePokemonName(selectedPokemon, (updatedPokemon, newNickname) => {
-                console.log('Changed name:', updatedPokemon);
+                // console.log('Changed name:', updatedPokemon);
                 addToTeamList(updatedPokemon, newNickname);
-                console.log('Added to team:', updatedPokemon);
+                // console.log('Added to team:', updatedPokemon);
             });
         });
     });
@@ -49,7 +49,7 @@ const displayMyTeam = (pokemonList) => {
     // Add event listeners for moveUp and moveDown buttons
     moveUpBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log('Move up');
+            // console.log('Move up');
             movePokemonUp(teamList[index], teamList);
             displayMyTeam(teamList);
         });
@@ -57,7 +57,7 @@ const displayMyTeam = (pokemonList) => {
 
     moveDownBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log('Move down');
+            // console.log('Move down');
             movePokemonDown(teamList[index], teamList);
             displayMyTeam(teamList);
         });
@@ -65,7 +65,7 @@ const displayMyTeam = (pokemonList) => {
 
     removeFromTeamBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log('Remove from team');
+            // console.log('Remove from team');
             movePokemonToReservesFromTeam(index);
         });
     });
@@ -84,7 +84,7 @@ const displayReserv = (pokemonList) => {
 
     moveUpReservBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log('Move up button clicked');
+            // console.log('Move up button clicked');
             movePokemonUp(reservList[index], reservList);
             displayReserv(reservList);
         });
@@ -92,7 +92,7 @@ const displayReserv = (pokemonList) => {
 
     moveDownReservBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log('Move down button clicked');
+            // console.log('Move down button clicked');
             movePokemonDown(reservList[index], reservList);
             displayReserv(reservList);
         });
@@ -100,7 +100,7 @@ const displayReserv = (pokemonList) => {
 
     removeFromReservBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
-            console.log('Remove from reserves');
+            // console.log('Remove from reserves');
             removeFromReserves(index);
         });
     });

@@ -1,23 +1,30 @@
 import { displayPokemon } from './displayPokemon.js';
 
-const pokemonPromise = []; 
+const pokemonPromises = [];
+
 const fetchPokemon = async () => {
     const cachedPokemonData = localStorage.getItem('pokemonData');
-
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`;
     if (cachedPokemonData) {
+        // Använda cachedPokemonData direkt om det finns i localStorage
         const cachedPokemon = JSON.parse(cachedPokemonData);
         displayPokemon(cachedPokemon);
     } else {
-        // fixa den forLoop att hämta alla pokemons
-        for (let i = 1; i <= 1000; i++) {
-            const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-            pokemonPromise.push(fetch(url).then((res) => res.json()));
-        }
-
         try {
-            const results = await Promise.all(pokemonPromise);
+            // Hämta data för alla pokemons i en enda API-förfrågan
+            const response = await fetch(url);
+            const data = await response.json();
+
+            // Skapa en lista med Promise-objekt för varje pokemon
+            pokemonPromises = data.results.map((pokemon) =>
+                fetch(pokemon.url).then((res) => res.json())
+            );
+
+            // Vänta på att alla Pokemon ska hämtas
+            const results = await Promise.all(pokemonPromises);
+
+            // Omvandla resultatet till det format du behöver
             const pokemon = results.map((result) => ({
-                // pokemonPromise
                 name: result.name,
                 abilities: result.abilities.map((ability) => ({
                     name: ability.ability.name,
@@ -25,7 +32,10 @@ const fetchPokemon = async () => {
                 image: result.sprites['front_default'],
             }));
 
+            // Spara pokemon-data i localStorage
             localStorage.setItem('pokemonData', JSON.stringify(pokemon));
+
+            // Visa pokemons på sidan
             displayPokemon(pokemon);
         } catch (error) {
             console.error('Error fetching Pokemon:', error);
@@ -33,27 +43,4 @@ const fetchPokemon = async () => {
     }
 };
 
-export { fetchPokemon,  };
-
-
-
-// async function getPokemon() {
-//     const url = `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`;
-  
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     return data;
-//   }
-//   async function fetchPokemonData(pokemonList) {
-//     for (const pokemon of pokemonList) {
-//       try {
-//         const response = await fetch(pokemon.url);
-//         const pokemonData = await response.json();
-//       } catch (error) {
-//         console.error(`Error fetching data for ${pokemon.name}:`, error);
-//       }
-//     }
-//   }
-  
-//   export { getPokemon, fetchPokemonData };
-  
+export { fetchPokemon };
