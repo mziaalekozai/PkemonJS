@@ -26,40 +26,42 @@ let teamList = [];
 let reservList = [];
 
 
-const addToTeamList = (pokemon) => {
+const addToTeamList = (pokemon, callback) => {
   console.log('Adding to team:', pokemon);
   // Kontrollera om Pokemon redan finns i antingen teamList eller reservList
-//   if (!teamList.includes(pokemon) && !reservList.includes(pokemon)) {
-      if (teamList.length < 3) {
-          teamList.push(pokemon);
-          countMyTeam++;
-          countMinTeam--;
-          teamCount.innerText = 'Team ' + countMyTeam;
-          teamTotalCount.innerText = 'You need ' + countMinTeam + ' in the team';
+  //   if (!teamList.includes(pokemon) && !reservList.includes(pokemon)) {
+  if (teamList.length < 3) {
+    teamList.push(pokemon);
+    countMyTeam++;
+    countMinTeam--;
+    teamCount.innerText = 'Team ' + countMyTeam;
+    teamTotalCount.innerText = 'You need ' + countMinTeam + ' in the team';
 
-          if (teamList.length === 3) {
-          teamTotalCount.innerText = 'The team is complete ';
-        //   teamTotalCount.classList.add("hide");
-          }
-      } else {
-        //   if (teamList.length === 3) {
-        //       teamTotalCount.classList.add("hide");
-        //   }
-          reservList.push(pokemon);
-          console.log('Adding to reserv', pokemon);
-          countMyReserv++;
-          reserveCount.innerText = 'Reserv ' + countMyReserv;
-        //   reserveCount.classList.add("show");
-      }
-      displayMyTeam(teamList);
-      displayReserv(reservList);
-//   }
-//    else {
-//       console.log('Pokemon already in team or reserv');
-//   }
+    if (teamList.length === 3) {
+      teamTotalCount.innerText = 'The team is complete ';
+      //   teamTotalCount.classList.add("hide");
+    }
+    // callback()
+  } else {
+    //   if (teamList.length === 3) {
+    //       teamTotalCount.classList.add("hide");
+    //   }
+    reservList.push(pokemon);
+    console.log('Adding to reserv', pokemon);
+    countMyReserv++;
+    reserveCount.innerText = 'Reserv ' + countMyReserv;
+    //   reserveCount.classList.add("show");
+    // callback()
+  }
+  displayMyTeam(teamList);
+  displayReserv(reservList);
+  //   }
+  //    else {
+  //       console.log('Pokemon already in team or reserv');
+  //   }
 };
 
 
-export {countMinTeam, teamList, reservList, addToTeamList, teamInfo, countMyTeam, countMyReserv };
+export { countMinTeam, teamList, reservList, addToTeamList, teamInfo, countMyTeam, countMyReserv };
 
 

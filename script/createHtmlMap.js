@@ -6,9 +6,11 @@ const createTeamHtmlElements = (pokemon) => {
                 <img class="card-image" src="${pokemon.image}"/>
                 <h2 class="card-title"> ${pokemon.name}</h2>
                 <p class="abilities">Abilitys: ${abilitiesInfo}</p>
-                <button class="moveUp"> <== </button>
-                <button id= "removFromReservBtn" class="removFromTeamBtn">Kicka</button>
-                <button class="moveDown"> ==> </button>
+                <div class="moveButtons"> 
+                    <div class="moveUp"> <== </div>
+                    <button id= "removFromReservBtn" class="removFromTeamBtn">Kick</button>
+                    <div class="moveDown"> ==> </div>
+                </div>
             </li>
         ` : ''}
     `};
@@ -21,9 +23,11 @@ const createReservHtmlElements = (pokemon) => {
                 <img class="card-image" src="${pokemon.image}"/>
                 <h2 class="card-title"> ${pokemon.name}</h2>
                 <p class="abilities">Abilitys: ${abilitiesInfo}</p>
-                <button class="moveUpReservPoke"> <== </button>
-                <button class="removFromReservBtn">Kicka</button>
-                <button class="moveDownReservPoke"> ==> </button>
+                <div class="moveButtons"> 
+                    <div class="moveUpReservPoke"> <== </div>
+                    <button class="removFromReservBtn">Kick</button>
+                    <div class="moveDownReservPoke"> ==> </div>
+                </div>
             </li>
         ` : ''}
     `};

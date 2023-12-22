@@ -1,4 +1,5 @@
 import { displayPokemon } from "./displayPokemon.js";
+import { addToTeamList } from './myTeam.js'
 
 const nickNameElement = document.querySelector('.nickName');
 
@@ -29,8 +30,12 @@ const changePokemonName = (pokemon, callback) => {
         nickNameElement.classList.add("hide");
 
         const newNickname = inputNickName.value.trim();
-
+        // inputNickName.value.trim() =
+        
         if (newNickname !== '') {
+            // addToTeamList(inputNickName);
+             pokemon.name= newNickname ;
+
             // pokemon.name: newNickname;
             // console.log('Updated Pokemon:', updatedPokemon);
             callback(newNickname);

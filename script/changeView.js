@@ -1,8 +1,8 @@
 import { displayPokemon, displayMyTeam, myTeamDex } from './displayPokemon.js';
-import { fetchPokemon, pokedex } from './pokemon-api.js';
-import {teamInfo} from './myTeam.js';
+import { fetchPokemon } from './pokemon-api.js';
+import { teamInfo } from './myTeam.js';
 import { initSearch, searchInput } from './searchPokemon.js';
-import { nickNameElement} from './changePokeName.js';
+import { nickNameElement } from './changePokeName.js';
 
 const pokemonElement = document.querySelector('.pokemon-container');
 const searchBtn = document.querySelector('.searchButton');
@@ -33,6 +33,7 @@ teamInfo.classList.add("hide");
 
 searchBtn.addEventListener('click', async () => {
     initSearch();
+    searchInput.innerText = ""
     teamInfo.classList.remove("hide");
     myTeamContainer.classList.add("hide");
     mainView.classList.add('hide');
@@ -50,7 +51,7 @@ searchBtn.addEventListener('click', async () => {
             // Gör API-anrop om det inte finns sparad data
             fetchPokemon();
         }
-        
+
         displayPokemonView.style.display = 'flex';
     } catch (error) {
         console.error('Error displaying Pokemon:', error);
@@ -77,4 +78,4 @@ startView.addEventListener('click', () => {
     teamInfo.classList.add("hide");
 });
 
-export { searchView,  pokemonElement };
+export { searchView, pokemonElement };

@@ -1,10 +1,11 @@
-import { pokedex } from './pokemon-api.js'
+// import { pokedex } from './pokemon-api.js'
 import { changePokemonName } from './changePokeName.js'
 import { teamList, reservList, addToTeamList } from './myTeam.js'
 import { movePokemonToReservesFromTeam, removeFromReserves } from './removePokemon.js'
-// import { initSearch } from './searchPokemon.js';
 import { createReservHtmlElements, createTeamHtmlElements } from './createHtmlMap.js';
 import { movePokemonUp, movePokemonDown } from './movePokeUpMovePokeDown.js';
+
+const pokedex = document.querySelector('#displayPokemon');
 
 const displayPokemon = (pokemon) => {
     console.log('Display Pokemon:', pokemon);
@@ -80,7 +81,7 @@ const displayReserv = (pokemonList) => {
     const removeFromReservBtn = document.querySelectorAll('.removFromReservBtn');
     const moveUpReservBtn = document.querySelectorAll('.moveUpReservPoke');
     const moveDownReservBtn = document.querySelectorAll('.moveDownReservPoke');
-   
+
     moveUpReservBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
             console.log('Move up button clicked');
@@ -88,7 +89,7 @@ const displayReserv = (pokemonList) => {
             displayReserv(reservList);
         });
     });
-    
+
     moveDownReservBtn.forEach((button, index) => {
         button.addEventListener('click', () => {
             console.log('Move down button clicked');
@@ -104,44 +105,7 @@ const displayReserv = (pokemonList) => {
         });
     });
 
-    
+
 };
 
-// const displayMyTeam = (pokemon) => {
-//     // byt namn pokemon till PokemonList
-//     const pokemonHTMLString = pokemon
-//         .map((pokemon) => createTeamHtmlElements(pokemon))
-//         .join('');
-//     myTeamDex.innerHTML = pokemonHTMLString;
-
-//     const moveUpBtn = document.querySelectorAll('.moveUp');
-//     const moveDownBtn = document.querySelectorAll('.moveDown');
-//     const removeFromTeamBtn = document.querySelectorAll('.removFromTeamBtn');
-//     removeFromTeamBtn.forEach((button, index) => {
-//         button.addEventListener('click', () => {
-//             console.log('Remove from team');
-//             movePokemonToReservesFromTeam(index);
-//         });
-//     });
-// };
-
-
-
-// const displayReserv = (pokemon) => {
-//     const pokemonHTMLString = pokemon
-//     .map((pokemon) => createReservHtmlElements(pokemon))
-//         .join('');
-//     reservDex.innerHTML = pokemonHTMLString;
-
-//     const removeFromReservBtn = document.querySelectorAll('.removFromReservBtn');
-//     removeFromReservBtn.forEach((button, index) => {
-//         button.addEventListener('click', () => {
-//             console.log('Remove from reserves');
-//             removeFromReserves(index);
-//         });
-//     });
-// };
-
 export { displayPokemon, displayReserv, displayMyTeam, myTeamDex, reservDex };
-
-
