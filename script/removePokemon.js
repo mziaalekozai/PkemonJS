@@ -30,12 +30,11 @@ function removeFromTeam(pokemonIndex) {
     console.error('Invalid index to remove from team.');
     return;
   }
-
+  
   const removedPokemon = teamList.splice(pokemonIndex, 1)[0]; // Ta bort från teamet
-
+  
   if (reservList.length === 0) {
     // Om reservlistan är tom, uppdatera endast teamets gränssnitt
-    // countMyTeam --;
     displayMyTeam(teamList);
   } else {
     // Annars, flytta första Pokémon från reservlistan till sist i teamet
@@ -43,6 +42,8 @@ function removeFromTeam(pokemonIndex) {
     teamList.push(firstPokemonInReserves);
     displayMyTeam(teamList);
   }
+  countMyTeam --;
+  teamCount.innerText = 'Team ' + countMyTeam;
 }
 
 function removeFromReserves(reserveIndex) {

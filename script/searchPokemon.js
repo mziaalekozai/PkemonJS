@@ -8,7 +8,6 @@ const searchInput = document.querySelector('#searchInput');
 const initSearch = () => {
   searchInput.innerText = ""
   searchInput.addEventListener('keyup', async (event) => {
-    countMinTeam = 0
     try {
       const cachedPokemonData = localStorage.getItem('pokemonData');
       const pokemonList = cachedPokemonData ? JSON.parse(cachedPokemonData) : await fetchPokemon();
