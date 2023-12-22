@@ -6,8 +6,8 @@ import { countMinTeam } from './myTeam.js';
 const searchInput = document.querySelector('#searchInput');
 
 const initSearch = () => {
-  searchInput.innerText = ""
-  searchInput.addEventListener('keyup', async (event) => {
+  // searchInput.innerText = ""
+  searchInput.addEventListener('keyup', async () => {
     try {
       const cachedPokemonData = localStorage.getItem('pokemonData');
       const pokemonList = cachedPokemonData ? JSON.parse(cachedPokemonData) : await fetchPokemon();

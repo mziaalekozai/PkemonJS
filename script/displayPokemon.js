@@ -1,11 +1,8 @@
-// import { pokedex } from './pokemon-api.js'
 import { changePokemonName } from './changePokeName.js'
 import { teamList, reservList, addToTeamList } from './myTeam.js'
 import { movePokemonToReservesFromTeam, removeFromReserves } from './removePokemon.js'
 import { createReservHtmlElements, createTeamHtmlElements } from './createHtmlMap.js';
 import { movePokemonUp, movePokemonDown } from './movePokeUpMovePokeDown.js';
-// import { changePokemonName, newNickname } from "./changePokeName.js";
-// import { addToTeamList } from './myTeam.js'
 
 const pokedex = document.querySelector('#displayPokemon');
 
@@ -37,39 +34,6 @@ const displayPokemon = (pokemon) => {
     });
 };
 
-
-
-
-
-// const pokedex = document.querySelector('#displayPokemon');
-
-// const displayPokemon = (pokemon) => {
-//     console.log('Display Pokemon:', pokemon);
-//     const pokemonHTMLString = pokemon
-//         .map(
-//             (pokemon) => `
-//             <li class="card">
-//             <img class="card-image" src="${pokemon.image}"/>
-//             <h2 class="card-title"> ${pokemon.name}</h2>
-//             <button class="addToTeamButton">Add to team</button>
-//             </li>
-//             `
-//         )
-//         .join('');
-//     pokedex.innerHTML = pokemonHTMLString;
-
-//     const addToTeamButtons = document.querySelectorAll('.addToTeamButton');
-//     addToTeamButtons.forEach((button, index) => {
-//         button.addEventListener('click', () => {
-//             const selectedPokemon = pokemon[index]; // Get the current Pokemon
-//             changePokemonName(selectedPokemon, (newNickName) => {
-//                 console.log('Changed name:', selectedPokemon);
-//                 addToTeamList(selectedPokemon);
-//                 console.log('Added to team:', selectedPokemon);
-//             });
-//         });
-//     });
-// };
 
 const myTeamDex = document.querySelector('.myTeam');
 const displayMyTeam = (pokemonList) => {
