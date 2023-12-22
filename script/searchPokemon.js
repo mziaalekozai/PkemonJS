@@ -12,7 +12,7 @@ const initSearch = () => {
 
       const searchQuery = event.target.value.trim().toLowerCase();
 
-      if (searchQuery.length >= 3) {
+      if (searchQuery.length >= 1 ) {
         const matchedPokemon = pokemonList.filter(pokemon =>
           pokemon.name.toLowerCase().includes(searchQuery)
         );

@@ -37,7 +37,6 @@ searchBtn.addEventListener('click', async () => {
     myTeamContainer.classList.add("hide");
     mainView.classList.add('hide');
     pokemonElement.style.display = 'grid';
-    // myTeamContainer.style.display = 'none';
     searchView.style.display = 'grid';
     searchInput.style.display = 'grid';
     try {
@@ -66,7 +65,7 @@ myTeamBtn.addEventListener('click', () => {
     displayPokemonView.style.display = 'none';
     searchInput.style.display = 'none';
     myTeamContainer.classList.remove("hide");
-    teamInfo.classList.remove("hide");
+    teamInfo.classList.add("hide");
 });
 
 startView.addEventListener('click', () => {

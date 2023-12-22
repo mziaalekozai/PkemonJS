@@ -1,54 +1,82 @@
+import { displayPokemon } from "./displayPokemon.js";
 
 const nickNameElement = document.querySelector('.nickName');
 
 const changePokemonName = (pokemon, callback) => {
     console.log('Change Pokemon Name function called');
     const createHtmlElements = `
-        <label class="nikeNameLabel">Choose the name</label>
-        <p class = "error">The name please...</p>
-        <input type="text" class="nicknameInput" value="${pokemon.name}">
-        <button class="saveBtn">Save</button>
-        <button class="closeBtn">Close</button>
+    <label class="nikeNameLabel">Choose the name</label>
+    <p class = "error">The name please...</p>
+    <input type="text" class="nicknameInput" value="${pokemon.name}">
+    <button class="saveBtn">Save</button>
+    <button class="closeBtn">Close</button>
     `;
-    
+
     nickNameElement.innerHTML = createHtmlElements;
     nickNameElement.classList.remove("hide");
-    
+
     const inputNickName = document.querySelector('.nicknameInput');
     const saveBtn = document.querySelector('.saveBtn');
     const closeBtn = document.querySelector('.closeBtn');
     const errorElement = document.querySelector('.error');
     errorElement.classList.add("hide");
-    
+
     // focus i input när man kommer till fältet
     inputNickName.focus();
-    // inputNickName.value = pokemon.nickname || ''; // Visa befintligt smeknamn i input-fältet
+
     saveBtn.addEventListener('click', () => {
-    console.log('Save Pokemon Name function called');
-    nickNameElement.classList.add("hide");
-    const newNickname = inputNickName.value.trim();
-    if (newNickname !== '') {
-        // Om ett nytt smeknamn har angetts, uppdatera Pokemon-namnet
-        pokemon.name = newNickname;
-        callback(pokemon); // Anropa callback-funktionen för att uppdatera gränssnittet
-        console.log('Saved Pokemon Name ', newNickname);
-    }else {
-        nickNameElement.classList.remove("hide");
-    errorElement.classList.remove('hide'); 
-    }
-});
-    
+        console.log('Save Pokemon Name function called');
+        nickNameElement.classList.add("hide");
+
+        const newNickname = inputNickName.value.trim();
+
+        if (newNickname !== '') {
+            // pokemon.name: newNickname;
+            // console.log('Updated Pokemon:', updatedPokemon);
+            callback(newNickname);
+            console.log('Saved Pokemon Name ', newNickname);
+           
+            // // const updatedPokemon = { ...pokemon, name: newNickname };
+            // pokemon.name = newNickname;
+            // callback(newNickname, pokemon.name); // Anropa callback-funktionen för att uppdatera gränssnittet
+            // console.log('Saved Pokemon Name ', newNickname);
+            // // displayPokemon(changePokemonName)
+        } else {
+            nickNameElement.classList.remove("hide");
+            errorElement.classList.remove('hide');
+        }
+    });
+
     closeBtn.addEventListener('click', () => {
         nickNameElement.classList.add('hide'); // Göm input och knappar om användaren stänger
     });
     document.addEventListener("click", function () {
         inputNickName.focus();
-        
+
     });
-    
+
 };
 
 export { changePokemonName, nickNameElement };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // import { displayPokemon } from "./displayPokemon.js";
@@ -58,30 +86,30 @@ export { changePokemonName, nickNameElement };
 // const nickNameElement = document.querySelector('.nickName');
 
 // const changePokemonName = (pokemon, callback) => {
-//     console.log('Change Pokemon Name function called');    
+//     console.log('Change Pokemon Name function called');
 //     const createHtmlElements = `
 //         <label class='error>Välj namnet</label>
 //         <input type="text" class="nicknameInput" value="${pokemon.name}">
 //         <button class="saveBtn">Spara</button>
 //         <button class="closeBtn">Stäng</button>
 //     `;
-    
+
 //     nickNameElement.innerHTML = createHtmlElements;
 //     nickNameElement.classList.remove("hide");
-    
+
 //     const inputNickName = document.querySelector('.nicknameInput');
 //     const saveBtn = document.querySelector('.saveBtn');
 //     const closeBtn = document.querySelector('.closeBtn');
-    
+
 //     // focus i input när man kommer till fältet
 //     inputNickName.focus();
 //     // inputNickName.value = pokemon.nickname || ''; // Visa befintligt smeknamn i input-fältet
 //     saveBtn.addEventListener('click', () => {
-//         console.log('Save Pokemon Name function called');    
-        
+//         console.log('Save Pokemon Name function called');
+
 //         const newNickname = inputNickName.value.trim();
 //         if (newNickname !== '') {
-//             // Om ett nytt smeknamn har angetts, uppdatera Pokemon-namnet    
+//             // Om ett nytt smeknamn har angetts, uppdatera Pokemon-namnet
 //             pokemon.name = newNickname;
 //             callback(pokemon); // Anropa callback-funktionen för att uppdatera gränssnittet
 //             nickNameElement.classList.add('hide'); // Göm input och knappar efter ändringen
@@ -89,13 +117,13 @@ export { changePokemonName, nickNameElement };
 //             console.log('Saved Pokemon Name ', newNickname);
 //         }
 //     });
-    
+
 //     closeBtn.addEventListener('click', () => {
-//         nickNameElement.classList.add('hide'); // Göm input och knappar om användaren stänger    
+//         nickNameElement.classList.add('hide'); // Göm input och knappar om användaren stänger
 //     });
-    
+
 //     document.addEventListener("click", function () {
-//         inputNickName.focus();    
+//         inputNickName.focus();
 //     });
 // };
 

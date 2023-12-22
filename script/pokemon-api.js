@@ -1,7 +1,8 @@
 import { displayPokemon } from './displayPokemon.js';
 const pokedex = document.querySelector('#displayPokemon');
 
-const pokemonList = [];
+const pokemonList = []; 
+// pokemonPromiss
 
 const fetchPokemon = async () => {
     const cachedPokemonData = localStorage.getItem('pokemonData');
@@ -10,6 +11,7 @@ const fetchPokemon = async () => {
         const cachedPokemon = JSON.parse(cachedPokemonData);
         displayPokemon(cachedPokemon);
     } else {
+        // fixa den forLoop att hämta alla pokemons
         for (let i = 1; i <= 1000; i++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             pokemonList.push(fetch(url).then((res) => res.json()));
@@ -18,6 +20,7 @@ const fetchPokemon = async () => {
         try {
             const results = await Promise.all(pokemonList);
             const pokemon = results.map((result) => ({
+                // pokemonList
                 name: result.name,
                 abilities: result.abilities.map((ability) => ({
                     name: ability.ability.name,
