@@ -1,6 +1,4 @@
-import { displayPokemon } from './displayPokemon.js';
-
-const pokemonPromises = [];
+let pokemonPromises = [];
 
 const fetchPokemon = async () => {
     const cachedPokemonData = localStorage.getItem('pokemonData');
@@ -36,7 +34,7 @@ const fetchPokemon = async () => {
             localStorage.setItem('pokemonData', JSON.stringify(pokemon));
 
             // Visa pokemons på sidan
-            displayPokemon(pokemon);
+            displayPokemon(pokemonPromises);
         } catch (error) {
             console.error('Error fetching Pokemon:', error);
         }
