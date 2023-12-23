@@ -46,11 +46,19 @@ body {
     height: 45vh;
     width: 35vh;
 }
-.searchInput{
-    padding: 1em;
-    width: 100%;
+#searchInput{
+    padding: 0.5em;
+    /* width: 100%; */
     border-radius: 4px;
+    background: transparent;
+    color: white;
+	box-shadow: 0px 0px 20px rgba(109, 199, 250, 0.991);
+    border-radius: 5px;
 }
+#searchInput::placeholder {
+    text-align: center;
+    color: white;
+  }
 .pokemon-container {
     padding: 1em;
     border-radius: 5px;
